@@ -1,0 +1,45 @@
+Program yang dibuat harus memenuhi ketentuan sebagai berikut:
+
+Menggunakan konsep struktur data Singly Linked List yang dibangun secara manual tanpa menggunakan library bawaan seperti java.util.LinkedList.
+
+Menggunakan kelas Node yang memiliki atribut:
+
+nim (String)
+
+nama (String)
+
+next (referensi ke node berikutnya)
+
+Menggunakan variabel count untuk menghitung jumlah elemen dalam linked list, dengan ketentuan:
+
+Setiap operasi insert, nilai count bertambah 1.
+
+Setiap operasi delete, nilai count berkurang 1.
+
+Program harus menyediakan menu interaktif menggunakan struktur kontrol switch-case yang memuat fitur berikut:
+
+Insert at Beginning
+
+Insert at Given Position (posisi 1 sampai count+1)
+
+Insert at End
+
+Delete from Beginning
+
+Delete Given Position (posisi 1 sampai count)
+
+Delete from End
+
+Delete First Occurrence berdasarkan NIM
+
+Show Data
+
+Exit
+
+Program harus mampu menampilkan seluruh data mahasiswa yang tersimpan dalam linked list.
+
+Input data dilakukan menggunakan kelas Scanner.
+
+Struktur program dibuat secara sistematis, rapi, dan mudah dipahami, dengan menekankan pada logika manipulasi pointer pada Singly Linked List.
+
+Tujuan dari praktikum ini adalah agar mahasiswa mampu memahami dan mengimplementasikan operasi dasar pada struktur data Singly Linked List secara manual serta memahami cara kerja pointer dalam pengelolaan data dinamis.
