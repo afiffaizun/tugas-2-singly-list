@@ -1,3 +1,4 @@
+
 # CLASS NODE (Menyimpan 1 data mahasiswa)
 class Node:
     def __init__(self, nim, nama):
@@ -214,19 +215,20 @@ def main():
         match pilihan:
 
             case 1:
-                nim = input("NIM  : ")
-                nama = input("Nama : ")
+                nim = input("Masukan NIM  : ")
+                nama = input("Masukan Nama : ")
                 data.insert_beginning(nim, nama)
 
             case 2:
-                nim = input("NIM  : ")
-                nama = input("Nama : ")
+                nim = input("Masukan NIM  : ")
+                nama = input("Masukan Nama : ")
+                print(f"Masukkan posisi (1 - {data.count + 1}): ")
                 pos = int(input("Posisi: "))
                 data.insert_position(nim, nama, pos)
 
             case 3:
-                nim = input("NIM  : ")
-                nama = input("Nama : ")
+                nim = input("Masukan NIM  : ")
+                nama = input("Masukan Nama : ")
                 data.insert_end(nim, nama)
 
             case 4:
