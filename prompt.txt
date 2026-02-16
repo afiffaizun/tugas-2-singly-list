@@ -1,45 +1,27 @@
-Program yang dibuat harus memenuhi ketentuan sebagai berikut:
+Buatlah program menggunakan bahasa pemrograman Java/Python yang mengimplementasikan struktur data Singly Linked List untuk menyimpan data mahasiswa dengan atribut:
 
-Menggunakan konsep struktur data Singly Linked List yang dibangun secara manual tanpa menggunakan library bawaan seperti java.util.LinkedList.
+-NIM (String)
+-Nama (String)
 
-Menggunakan kelas Node yang memiliki atribut:
+Program harus memiliki:
+Class Node untuk menyimpan data mahasiswa dan pointer ke node berikutnya. Class LinkedList untuk mengelola operasi pada linked list. Variabel head untuk menunjuk node pertama. Variabel count untuk menghitung jumlah data. Program harus menyediakan menu interaktif (menggunakan switch-case) dengan fitur:
 
-nim (String)
+Menu
+-Insert at Beginning
+-Insert at Given Position
+-Insert at End
+-Delete from Beginning
+-Delete Given Position
+-Delete from End
+-Delete First Occurrence (by NIM)
+-Show Data
+-Exit
 
-nama (String)
+Ketentuan tambahan:
+-Program harus melakukan validasi posisi agar tidak terjadi error.
+-Program harus menangani kondisi list kosong.
+-Output tampilan data harus rapi dalam bentuk tabel (menggunakan System.out.printf).
+-Sertakan komentar penjelasan sederhana pada setiap bagian penting kode.
+-Gunakan Scanner untuk input dari user.
 
-next (referensi ke node berikutnya)
-
-Menggunakan variabel count untuk menghitung jumlah elemen dalam linked list, dengan ketentuan:
-
-Setiap operasi insert, nilai count bertambah 1.
-
-Setiap operasi delete, nilai count berkurang 1.
-
-Program harus menyediakan menu interaktif menggunakan struktur kontrol switch-case yang memuat fitur berikut:
-
-Insert at Beginning
-
-Insert at Given Position (posisi 1 sampai count+1)
-
-Insert at End
-
-Delete from Beginning
-
-Delete Given Position (posisi 1 sampai count)
-
-Delete from End
-
-Delete First Occurrence berdasarkan NIM
-
-Show Data
-
-Exit
-
-Program harus mampu menampilkan seluruh data mahasiswa yang tersimpan dalam linked list.
-
-Input data dilakukan menggunakan kelas Scanner.
-
-Struktur program dibuat secara sistematis, rapi, dan mudah dipahami, dengan menekankan pada logika manipulasi pointer pada Singly Linked List.
-
-Tujuan dari praktikum ini adalah agar mahasiswa mampu memahami dan mengimplementasikan operasi dasar pada struktur data Singly Linked List secara manual serta memahami cara kerja pointer dalam pengelolaan data dinamis.
+Buat program Java berbasis OOP yang terdiri dari class Node, class LinkedList, dan class Main. Implementasikan Singly Linked List dengan atribut NIM dan Nama. Sediakan seluruh operasi insert dan delete (awal, posisi tertentu, akhir, dan berdasarkan NIM). Tambahkan menu interaktif menggunakan switch-case, validasi input, pengecekan list kosong, dan tampilkan data dalam format tabel rapi. Gunakan Scanner untuk input dan tambahkan komentar sederhana pada setiap method.
