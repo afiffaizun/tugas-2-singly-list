@@ -1,3 +1,5 @@
+Tools AI Chat GPT dan Claude
+
 Buatlah program menggunakan bahasa pemrograman Java/Python yang mengimplementasikan struktur data Singly Linked List untuk menyimpan data mahasiswa dengan atribut:
 
 -NIM (String)
