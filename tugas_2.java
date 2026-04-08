@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-// ===============================
-// CLASS NODE (Menyimpan 1 data mahasiswa)
-// ===============================
+// CLASS NODE
 class Node {
     String nim;
     String nama;
@@ -17,34 +15,26 @@ class Node {
 }
 
 
-// ===============================
-// CLASS LINKED LIST
-// ===============================
 class LinkedList {
 
     Node head;     // menunjuk node pertama
-    int count;     // menghitung jumlah data
+    int count;     // jumlah data
 
-    // Constructor
     LinkedList() {
         head = null;
         count = 0;
     }
 
-    // ===============================
-    // 1. INSERT DI AWAL
-    // ===============================
+
     void insertBeginning(String nim, String nama) {
         Node newNode = new Node(nim, nama);
-        newNode.next = head;
+        newNode.next = head; // node baru menunjuk head lama
         head = newNode;
         count++;
         System.out.println("Data berhasil ditambahkan di awal.");
     }
 
-    // ===============================
-    // 2. INSERT DI POSISI TERTENTU
-    // ===============================
+
     void insertPosition(String nim, String nama, int pos) {
 
         if (pos < 1 || pos > count + 1) {
@@ -71,15 +61,14 @@ class LinkedList {
         System.out.println("Data berhasil ditambahkan di posisi " + pos);
     }
 
-    // ===============================
-    // 3. INSERT DI AKHIR
-    // ===============================
+
     void insertEnd(String nim, String nama) {
 
         Node newNode = new Node(nim, nama);
 
         if (head == null) {
             head = newNode;
+            
         } else {
             Node current = head;
 
@@ -94,9 +83,7 @@ class LinkedList {
         System.out.println("Data berhasil ditambahkan di akhir.");
     }
 
-    // ===============================
-    // 4. DELETE DI AWAL
-    // ===============================
+
     void deleteBeginning() {
 
         if (head == null) {
@@ -109,9 +96,7 @@ class LinkedList {
         System.out.println("Data awal berhasil dihapus.");
     }
 
-    // ===============================
-    // 5. DELETE DI POSISI TERTENTU
-    // ===============================
+
     void deletePosition(int pos) {
 
         if (pos < 1 || pos > count) {
@@ -135,9 +120,7 @@ class LinkedList {
         System.out.println("Data posisi " + pos + " berhasil dihapus.");
     }
 
-    // ===============================
-    // 6. DELETE DI AKHIR
-    // ===============================
+
     void deleteEnd() {
 
         if (head == null) {
@@ -161,9 +144,7 @@ class LinkedList {
         System.out.println("Data terakhir berhasil dihapus.");
     }
 
-    // ===============================
-    // 7. DELETE BERDASARKAN NIM
-    // ===============================
+
     void deleteByNim(String nim) {
 
         if (head == null) {
@@ -193,9 +174,7 @@ class LinkedList {
         System.out.println("NIM tidak ditemukan!");
     }
 
-    // ===============================
-    // 8. MENAMPILKAN DATA
-    // ===============================
+
     void show() {
 
         if (head == null) {
@@ -225,9 +204,7 @@ class LinkedList {
 }
 
 
-// ===============================
-// CLASS MAIN (Program Menu)
-// ===============================
+
 public class tugas_2 {
 
     public static void main(String[] args) {
@@ -267,7 +244,7 @@ public class tugas_2 {
                     String nim2 = input.nextLine();
                     System.out.print("Masukan Nama : ");
                     String nama2 = input.nextLine();
-                    System.out.print("Posisi: ");
+                    System.out.print("Masukan posisi (1 - " + (data.count + 1) + "): ");
                     int posInsert = input.nextInt();
                     input.nextLine();
                     data.insertPosition(nim2, nama2, posInsert);

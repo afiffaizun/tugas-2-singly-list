@@ -1,30 +1,26 @@
-
-# CLASS NODE (Menyimpan 1 data mahasiswa)
 class Node:
     def __init__(self, nim, nama):
-        self.nim = nim      # menyimpan NIM mahasiswa
-        self.nama = nama    # menyimpan nama mahasiswa
-        self.next = None    # pointer ke node berikutnya (default None)
+        self.nim = nim      
+        self.nama = nama   
+        self.next = None    # pointer ke node berikutnya 
 
 
-# CLASS LINKED LIST
 class LinkedList:
     def __init__(self):
         self.head = None    # head menunjuk node pertama
-        self.count = 0      # menghitung jumlah data
+        self.count = 0      
 
-    # 1. INSERT DI AWAL
+    
     def insert_beginning(self, nim, nama):
         new_node = Node(nim, nama)   # buat node baru
         new_node.next = self.head    # node baru menunjuk ke head lama
-        self.head = new_node         # head pindah ke node baru
+        self.head = new_node         # node baru jadikan head
         self.count += 1              # jumlah data bertambah
         print("Data berhasil ditambahkan di awal.")
 
-    # 2. INSERT DI POSISI TERTENTU
+    
     def insert_position(self, nim, nama, pos):
 
-        # cek apakah posisi valid
         if pos < 1 or pos > self.count + 1:
             print("Posisi tidak valid!")
             return
@@ -48,13 +44,14 @@ class LinkedList:
         self.count += 1
         print(f"Data berhasil ditambahkan di posisi {pos}.")
 
-    # 3. INSERT DI AKHIR
+
     def insert_end(self, nim, nama):
         new_node = Node(nim, nama)
 
         # jika list kosong
         if self.head is None:
             self.head = new_node
+
         else:
             current = self.head
 
@@ -67,9 +64,7 @@ class LinkedList:
         self.count += 1
         print("Data berhasil ditambahkan di akhir.")
 
-    # ===============================
-    # 4. DELETE DI AWAL
-    # ===============================
+
     def delete_beginning(self):
 
         # jika kosong
@@ -81,9 +76,7 @@ class LinkedList:
         self.count -= 1
         print("Data awal berhasil dihapus.")
 
-    # ===============================
-    # 5. DELETE DI POSISI TERTENTU
-    # ===============================
+
     def delete_position(self, pos):
 
         # cek posisi valid
@@ -91,7 +84,6 @@ class LinkedList:
             print("Posisi tidak valid!")
             return
 
-        # jika hapus posisi pertama
         if pos == 1:
             self.delete_beginning()
             return
@@ -108,33 +100,29 @@ class LinkedList:
         self.count -= 1
         print(f"Data posisi {pos} berhasil dihapus.")
 
-    # ===============================
-    # 6. DELETE DI AKHIR
-    # ===============================
+
     def delete_end(self):
 
         if self.head is None:
             print("List kosong!")
             return
 
-        # jika hanya 1 node
         if self.head.next is None:
             self.head = None
+
         else:
             current = self.head
 
             # cari node sebelum terakhir
             while current.next.next:
-                current = current.next
+                current = current.next #geser pointer ke node selanjutnya
 
-            current.next = None
+            current.next = None #node pada ini hilang, tidak terhubung
 
         self.count -= 1
         print("Data terakhir berhasil dihapus.")
 
-    # ===============================
-    # 7. DELETE BERDASARKAN NIM
-    # ===============================
+
     def delete_by_nim(self, nim):
 
         if self.head is None:
@@ -161,7 +149,7 @@ class LinkedList:
 
         print("NIM tidak ditemukan!")
 
-    # 8. MENAMPILKAN DATA
+
     def show(self):
 
         if self.head is None:
@@ -188,14 +176,14 @@ class LinkedList:
         print("=" * 50)
 
 
-# ===============================
-# PROGRAM MENU
-# ===============================
+
 def main():
+
     data = LinkedList()
 
     while True:
-        print("\n===== MENU =====")
+
+        print("\n========== MENU ==========")
         print("1. Insert at Beginning")
         print("2. Insert at Given Position")
         print("3. Insert at End")
@@ -205,57 +193,50 @@ def main():
         print("7. Delete First Occurrence (by NIM)")
         print("8. Show Data")
         print("9. Exit")
+        print("==========================")
 
-        try:
-            pilihan = int(input("Pilih Opsi: "))
-        except ValueError:
-            print("Input harus angka!")
-            continue
+        pilihan = input("Pilih menu: ")
 
-        match pilihan:
+        if pilihan == "1":
+            nim = input("Masukkan NIM  : ")
+            nama = input("Masukkan Nama : ")
+            data.insert_beginning(nim, nama)
 
-            case 1:
-                nim = input("Masukan NIM  : ")
-                nama = input("Masukan Nama : ")
-                data.insert_beginning(nim, nama)
+        elif pilihan == "2":
+            nim = input("Masukkan NIM  : ")
+            nama = input("Masukkan Nama : ")
+            pos = int(input(f"Masukkan Posisi ( 1 - {data.count + 1} ): "))
+            data.insert_position(nim, nama, pos)
 
-            case 2:
-                nim = input("Masukan NIM  : ")
-                nama = input("Masukan Nama : ")
-                print(f"Masukkan posisi (1 - {data.count + 1}): ")
-                pos = int(input("Posisi: "))
-                data.insert_position(nim, nama, pos)
+        elif pilihan == "3":
+            nim = input("Masukkan NIM  : ")
+            nama = input("Masukkan Nama : ")
+            data.insert_end(nim, nama)
 
-            case 3:
-                nim = input("Masukan NIM  : ")
-                nama = input("Masukan Nama : ")
-                data.insert_end(nim, nama)
+        elif pilihan == "4":
+            data.delete_beginning()
 
-            case 4:
-                data.delete_beginning()
+        elif pilihan == "5":
+            pos = int(input("Masukkan Posisi yang akan dihapus : "))
+            data.delete_position(pos)
 
-            case 5:
-                pos = int(input("Posisi: "))
-                data.delete_position(pos)
+        elif pilihan == "6":
+            data.delete_end()
 
-            case 6:
-                data.delete_end()
+        elif pilihan == "7":
+            nim = input("Masukkan NIM yang akan dihapus : ")
+            data.delete_by_nim(nim)
 
-            case 7:
-                nim = input("NIM yang dihapus: ")
-                data.delete_by_nim(nim)
+        elif pilihan == "8":
+            data.show()
 
-            case 8:
-                data.show()
+        elif pilihan == "9":
+            print("Program selesai.")
+            break
 
-            case 9:
-                print("Program selesai.")
-                break
-
-            case _:
-                print("Menu tidak tersedia.")
+        else:
+            print("Pilihan tidak valid!")
 
 
-# Menjalankan program
 if __name__ == "__main__":
     main()

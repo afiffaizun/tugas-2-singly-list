@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Tools AI Chat GPT dan Claude
 
 Buatlah program menggunakan bahasa pemrograman Java/Python yang mengimplementasikan struktur data Singly Linked List untuk menyimpan data mahasiswa dengan atribut:
@@ -27,3 +28,88 @@ Ketentuan tambahan:
 -Gunakan Scanner untuk input dari user.
 
 Buat program Java berbasis OOP yang terdiri dari class Node, class LinkedList, dan class Main. Implementasikan Singly Linked List dengan atribut NIM dan Nama. Sediakan seluruh operasi insert dan delete (awal, posisi tertentu, akhir, dan berdasarkan NIM). Tambahkan menu interaktif menggunakan switch-case, validasi input, pengecekan list kosong, dan tampilkan data dalam format tabel rapi. Gunakan Scanner untuk input dan tambahkan komentar sederhana pada setiap method.
+=======
+PROMPT PEMBUATAN PROGRAM LINKED LIST DATA MAHASISWA (PYTHON)
+
+Buatkan program Python yang mengimplementasikan struktur data
+Singly Linked List untuk menyimpan data mahasiswa. Program harus
+menggunakan konsep Object Oriented Programming (OOP) dan memiliki
+menu interaktif di terminal.
+
+SPESIFIKASI PROGRAM
+
+1. CLASS NODE
+Buat class Node yang digunakan untuk menyimpan satu data mahasiswa
+dengan atribut berikut:
+- nim  : menyimpan NIM mahasiswa
+- nama : menyimpan nama mahasiswa
+- next : pointer ke node berikutnya (default None)
+
+2. CLASS LINKED LIST
+Buat class LinkedList yang memiliki atribut:
+- head  : menunjuk ke node pertama
+- count : menghitung jumlah data dalam linked list
+
+3. METHOD YANG HARUS ADA
+
+INSERT DATA
+- insert_beginning(nim, nama)
+  Menambahkan data mahasiswa di awal linked list.
+
+- insert_position(nim, nama, pos)
+  Menambahkan data mahasiswa pada posisi tertentu.
+
+- insert_end(nim, nama)
+  Menambahkan data mahasiswa di akhir linked list.
+
+DELETE DATA
+- delete_beginning()
+  Menghapus node pertama pada linked list.
+
+- delete_position(pos)
+  Menghapus node pada posisi tertentu.
+
+- delete_end()
+  Menghapus node terakhir pada linked list.
+
+- delete_by_nim(nim)
+  Menghapus data mahasiswa berdasarkan NIM pertama yang ditemukan.
+
+MENAMPILKAN DATA
+- show()
+  Menampilkan seluruh data mahasiswa dalam bentuk tabel dengan kolom:
+  No | NIM | Nama
+  serta menampilkan total jumlah data mahasiswa.
+
+4. MENU PROGRAM
+
+Program harus memiliki menu interaktif menggunakan perulangan
+while True dengan pilihan sebagai berikut:
+
+1. Insert at Beginning
+2. Insert at Given Position
+3. Insert at End
+4. Delete from Beginning
+5. Delete Given Position
+6. Delete from End
+7. Delete First Occurrence (by NIM)
+8. Show Data
+9. Exit
+
+5. KETENTUAN TAMBAHAN
+
+- Gunakan struktur OOP (class dan object).
+- Tambahkan validasi input:
+  - Posisi tidak boleh kurang dari 1 atau lebih dari jumlah data.
+  - Tampilkan pesan jika linked list kosong.
+- Tampilan data harus rapi seperti tabel di terminal menggunakan
+  format string.
+
+6. PROGRAM DIJALANKAN DENGAN
+
+if __name__ == "__main__":
+    main()
+
+Tujuan program ini adalah untuk mensimulasikan manajemen data
+mahasiswa menggunakan struktur data Linked List di Python.
+>>>>>>> 5ac0f8e (backup tugas)
